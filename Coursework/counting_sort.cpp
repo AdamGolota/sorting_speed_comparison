@@ -18,7 +18,7 @@ int sorting::counting_sort(int arr[], int n) {
 			minNegative = arr[i];
 	}
 	size = size - minNegative + 1;
-	counters = new int[size];
+	counters = new int[size] {};
 	for (i = 0; i < n; i++)
 		counters[arr[i] - minNegative]++;
 	index = 0;

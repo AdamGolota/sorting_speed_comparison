@@ -631,7 +631,6 @@ private: System::Void measurement_bw_DoWork(System::Object^  sender, System::Com
 		if (this->algorithms[i]->disable_flag)
 			continue;
 
-		// Make a copy so the original array is unchaged
 		int* arr = sorting::create_copy(this->original_arr, el_number);
 
 		// Set timer
@@ -643,9 +642,8 @@ private: System::Void measurement_bw_DoWork(System::Object^  sender, System::Com
 
 		// Start sorting process
 		double sorting_time = sorting::measure_sorting_time(arr, el_number, this->algorithms[i]->sorting_function);
-		// Finish sorting process
 
-		// Stop timer
+		// Stop timer after sorting
 		this->measurement_bw->ReportProgress(i, sorting_time);
 		delete[] arr;
 	}
