@@ -624,7 +624,7 @@ private: System::Void measurement_bw_DoWork(System::Object^  sender, System::Com
 
 
 	// Generate array
-	this->original_arr = sorting::generate_array(this->el_number(), this->from(), this->to());
+	this->original_arr = sorting::generate_array(el_number, this->from(), this->to());
 	
 	// Make measurements three times for different functions
 	for (int i = 0; i < 3; i++) {
@@ -652,7 +652,7 @@ private: System::Void measurement_bw_DoWork(System::Object^  sender, System::Com
 
 private: System::Void measurement_bw_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e) {
 
-	// Onse again, ProgressPercentage contains process number, not percentage! 
+	// Once again, ProgressPercentage contains process number, not percentage! 
 	int process_number = e->ProgressPercentage;
 	double time = Convert::ToDouble(e->UserState);
 	if (time != 0) {
